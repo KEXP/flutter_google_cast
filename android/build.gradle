@@ -26,6 +26,8 @@ apply plugin: 'kotlin-android'
 
 
 android {
+    namespace "com.felnanuke.google_cast"
+
     compileSdkVersion 33
 
     compileOptions {
