@@ -40,7 +40,11 @@ public class SwiftGoogleCastPlugin: NSObject, GCKLoggerDelegate, FlutterPlugin, 
         context.sessionManager.add(FGCSessionManagerMethodChannel.instance)
         context.discoveryManager.startDiscovery()
 
-        result(nil)
+      //this is throwing an error on the flutter side that expects a bool
+      //         result(nil)
+
+      //testing a patch with setting this to true
+      result(true)
     }
 
     // MARK: - GCKLoggerDelegate
