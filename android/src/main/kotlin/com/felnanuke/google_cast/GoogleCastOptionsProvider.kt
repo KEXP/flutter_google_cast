@@ -7,9 +7,22 @@ import com.google.android.gms.cast.framework.SessionProvider
 
 
  class GoogleCastOptionsProvider : OptionsProvider {
-     companion object{
-         lateinit var options: CastOptions
+     companion object {
+         private var _options: CastOptions? = null
+
+         var options: CastOptions
+             get() = _options ?: defaultOptions()
+             set(value) {
+                 _options = value
+             }
+
+         private fun defaultOptions(): CastOptions {
+             return CastOptions.Builder()
+                 .setReceiverApplicationId("CC1AD845")  // Default Media Receiver
+                 .build()
+         }
      }
+
     override fun getCastOptions(context: Context): CastOptions {
 
         return options
